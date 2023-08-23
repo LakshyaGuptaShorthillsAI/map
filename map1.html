@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4f347dc59c7c8a8e433a52f50772e39b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4f347dc59c7c8a8e433a52f50772e39b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4f347dc59c7c8a8e433a52f50772e39b = L.map(
+                "map_4f347dc59c7c8a8e433a52f50772e39b",
+                {
+                    center: [40.2932319, -74.1671114],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b14d90b81180613630f1e7ce4282aa7c = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_4f347dc59c7c8a8e433a52f50772e39b);
+        
+    
+            var choropleth_b3370035146edaad9fb15294710c1b65 = L.featureGroup(
+                {}
+            ).addTo(map_4f347dc59c7c8a8e433a52f50772e39b);
+        
+    
+        function geo_json_03e4879bf4df4a1339adf7586ab3d4a2_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillColor": "blue", "fillOpacity": 0, "opacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_03e4879bf4df4a1339adf7586ab3d4a2_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_03e4879bf4df4a1339adf7586ab3d4a2 = L.geoJson(null, {
+                onEachFeature: geo_json_03e4879bf4df4a1339adf7586ab3d4a2_onEachFeature,
+            
+                style: geo_json_03e4879bf4df4a1339adf7586ab3d4a2_styler,
+        });
+
+        function geo_json_03e4879bf4df4a1339adf7586ab3d4a2_add (data) {
+            geo_json_03e4879bf4df4a1339adf7586ab3d4a2
+                .addData(data)
+                .addTo(choropleth_b3370035146edaad9fb15294710c1b65);
+        }
+            geo_json_03e4879bf4df4a1339adf7586ab3d4a2_add({"bbox": [-97.22894344764504, 38.939303086903124, -73.91279557971325, 49.38928538674975], "features": [{"bbox": [-97.22894344764504, 43.50018748633542, -89.4900319346622, 49.38928538674975], "geometry": {"coordinates": [[[-89.95765601272012, 47.286907253603175], [-90.13175391311144, 47.29274669045216], [-90.30585181350276, 47.29801768654593], [-90.47994971389409, 47.30385712339489], [-90.6540476142854, 47.309128119488676], [-90.85778194859611, 47.21282908791278], [-91.06097368036777, 47.117046820659795], [-91.26470801467849, 47.02126455340681], [-91.46844234898919, 46.9249655218309], [-91.59225908076053, 46.876260484395914], [-91.71661841507091, 46.82760712339301], [-91.8409777493813, 46.778385321635], [-91.96479448115262, 46.72970612241605], [-92.01189754918667, 46.71172272397848], [-92.27487891312, 46.65614472104858], [-92.26482784703924, 46.09522288673644], [-92.2965830146826, 46.09628225359842], [-92.54369971390233, 45.98569468849381], [-92.75696834997089, 45.88991242124082], [-92.89982784704182, 45.705763454768714], [-92.68922054723626, 45.51843638771068], [-92.76541744665064, 45.26708222104298], [-92.76647681351261, 44.9961426865367], [-92.79665584997105, 44.77602692318949], [-92.50507158076417, 44.58391978614445], [-92.38549231644078, 44.57492808692567], [-92.06215287959051, 44.43258535417769], [-91.949989183301, 44.364837551443046], [-91.87960588251947, 44.25742808692439], [-91.62770911331273, 44.085448920257036], [-91.28959021682704, 43.93729258887629], [-91.25729244664458, 43.854739488289965], [-91.2546569485977, 43.61397899024206], [-91.22819861526426, 43.5012468531974], [-92.54000484899348, 43.51977285417405], [-94.00102678096546, 43.51341665300214], [-95.35993608272871, 43.50018748633542], [-96.4526600817565, 43.50178945573647], [-96.43943091508982, 44.43576345476367], [-96.56061214881424, 45.39301768653837], [-96.73576941606754, 45.47081655535372], [-96.83470394569034, 45.62532908790642], [-96.78072791216147, 45.76079885515958], [-96.55689144568922, 45.87244578712617], [-96.53945064979075, 46.017966620460186], [-96.53890804725165, 46.199480088885366], [-96.60135901567638, 46.3513571233911], [-96.68548824744755, 46.51328522397769], [-96.73365068234358, 46.71647695574927], [-96.7458204821483, 46.9445250514533], [-96.77969438351563, 46.999043687521294], [-96.82041541216165, 47.29220408791309], [-96.82465287960957, 47.42661448830425], [-96.84423824744819, 47.54619375262766], [-96.89397681352912, 47.74886872007637], [-97.01515804725355, 47.954205023788134], [-97.13104244666809, 48.13729462339825], [-97.14850908078273, 48.31878225360731], [-97.16122148312654, 48.51458425556122], [-97.12734758175921, 48.64212169045756], [-97.1204746162644, 48.75852285419501], [-97.21413814979343, 48.90244171812793], [-97.22894344764504, 49.00088532164389], [-95.15883724646483, 48.9998259547819], [-95.15620174841791, 49.38401439065592], [-94.81754024939323, 49.38928538674975], [-94.64026424841592, 48.84001658791925], [-94.32912044958647, 48.670672919298795], [-93.63061011429733, 48.60928131773602], [-92.60984554723586, 48.45001455341253], [-91.63987891311746, 48.13993012144516], [-90.83026424840062, 48.27010305438836], [-89.59995174839577, 48.01027395282483], [-89.59940914585667, 48.01027395282483], [-89.4900319346622, 48.01340602289096], [-89.52269548211933, 47.96053538674391], [-89.61369767938538, 47.81925202085796], [-89.72800594761503, 47.641976019880644], [-89.84283098016755, 47.464725857119504], [-89.95765601272012, 47.286907253603175]]], "type": "Polygon"}, "id": "0", "properties": {"FCLASS_AR": null, "FCLASS_BD": null, "FCLASS_BR": null, "FCLASS_CN": null, "FCLASS_DE": null, "FCLASS_EG": null, "FCLASS_ES": null, "FCLASS_FR": null, "FCLASS_GB": null, "FCLASS_GR": null, "FCLASS_ID": null, "FCLASS_IL": null, "FCLASS_IN": null, "FCLASS_ISO": null, "FCLASS_IT": null, "FCLASS_JP": null, "FCLASS_KO": null, "FCLASS_MA": null, "FCLASS_NL": null, "FCLASS_NP": null, "FCLASS_PK": null, "FCLASS_PL": null, "FCLASS_PS": null, "FCLASS_PT": null, "FCLASS_RU": null, "FCLASS_SA": null, "FCLASS_SE": null, "FCLASS_TLC": null, "FCLASS_TR": null, "FCLASS_TW": null, "FCLASS_UA": null, "FCLASS_US": null, "FCLASS_VN": null, "abbrev": "Minn.", "adm0_a3": "USA", "adm0_label": 2, "adm0_sr": 1, "adm1_code": "USA-3514", "admin": "United States of America", "area_sqkm": 0, "check_me": 20, "code_hasc": "US.MN", "code_local": "US27", "datarank": 1, "diss_me": 3514, "featurecla": "Admin-1 scale rank", "fips": "US27", "fips_alt": null, "gadm_level": 1, "geonunit": "United States of America", "gn_a1_code": "US.MN", "gn_id": 5037779, "gn_level": 1, "gn_name": "Minnesota", "gn_region": null, "gns_adm1": null, "gns_id": -1, "gns_lang": null, "gns_level": -1, "gns_name": null, "gns_region": null, "gu_a3": "USA", "hasc_maybe": null, "iso_3166_2": "US-MN", "iso_a2": "US", "labelrank": 0, "latitude": 46.0592, "longitude": -93.364, "mapcolor13": 1, "mapcolor9": 1, "max_label": 7.5, "min_label": 3.5, "min_zoom": 2, "name": "Minnesota", "name_alt": "MN|Minn.", "name_ar": "\u0645\u064a\u0646\u064a\u0633\u0648\u062a\u0627", "name_bn": "\u09ae\u09bf\u09a8\u09c7\u09b8\u09cb\u099f\u09be", "name_de": "Minnesota", "name_el": "\u039c\u03b9\u03bd\u03b5\u03c3\u03cc\u03c4\u03b1", "name_en": "Minnesota", "name_es": "Minnesota", "name_fa": "\u0645\u06cc\u0646\u0647\u0633\u0648\u062a\u0627", "name_fr": "Minnesota", "name_he": "\u05de\u05d9\u05e0\u05e1\u05d5\u05d8\u05d4", "name_hi": "\u092e\u093f\u0928\u0947\u0938\u094b\u091f\u093e", "name_hu": "Minnesota", "name_id": "Minnesota", "name_it": "Minnesota", "name_ja": "\u30df\u30cd\u30bd\u30bf\u5dde", "name_ko": "\ubbf8\ub124\uc18c\ud0c0", "name_len": 9, "name_local": null, "name_nl": "Minnesota", "name_pl": "Minnesota", "name_pt": "Minnesota", "name_ru": "\u041c\u0438\u043d\u043d\u0435\u0441\u043e\u0442\u0430", "name_sv": "Minnesota", "name_tr": "Minnesota", "name_uk": "\u041c\u0456\u043d\u043d\u0435\u0441\u043e\u0442\u0430", "name_ur": "\u0645\u06cc\u0646\u06cc\u0633\u0648\u0679\u0627", "name_vi": "Minnesota", "name_zh": "\u660e\u5c3c\u82cf\u8fbe\u5dde", "name_zht": "\u660e\u5c3c\u8607\u9054\u5dde", "ne_id": 1159315297, "note": null, "postal": "MN", "provnum_ne": 0, "region": "Midwest", "region_cod": null, "region_sub": "West North Central", "sameascity": -99, "scalerank": 2, "sov_a3": "US1", "sub_code": null, "type": "State", "type_en": "State", "wikidataid": "Q1527", "wikipedia": "http://en.wikipedia.org/wiki/Minnesota", "woe_id": 2347582, "woe_label": "Minnesota, US, United States", "woe_name": "Minnesota"}, "type": "Feature"}, {"bbox": [-75.55427161324837, 38.939303086903124, -73.91279557971325, 41.35548635514192], "geometry": {"coordinates": [[[-75.527813279915, 39.49864879003036], [-75.55427161324837, 39.69124685318229], [-75.40557267932849, 39.795504055331094], [-75.200804816372, 39.88704885513607], [-75.12881954618945, 39.949499823560814], [-74.89175391305048, 40.08179149022811], [-74.76318294950823, 40.19077708593164], [-75.07802161324645, 40.44954682063326], [-75.09548824736112, 40.555380153966894], [-75.20395707874178, 40.58661855728735], [-75.19920284697093, 40.74746145279573], [-75.08225908069448, 40.8697020533823], [-75.1357183499004, 40.999874986325494], [-74.97590898303775, 41.087724921221536], [-74.80126848010735, 41.31156138769393], [-74.67902787952096, 41.35548635514192], [-73.91279557971325, 40.96018748632537], [-73.95232499999992, 40.75075000000004], [-74.25675391304787, 40.473369655919726], [-73.96244000000002, 40.42763000000002], [-74.17843827990953, 39.70925608983589], [-74.90604244657914, 38.939303086903124], [-74.9806632148086, 39.19649669041985], [-75.2002622138329, 39.2483539902247], [-75.527813279915, 39.49864879003036]]], "type": "Polygon"}, "id": "45", "properties": {"FCLASS_AR": null, "FCLASS_BD": null, "FCLASS_BR": null, "FCLASS_CN": null, "FCLASS_DE": null, "FCLASS_EG": null, "FCLASS_ES": null, "FCLASS_FR": null, "FCLASS_GB": null, "FCLASS_GR": null, "FCLASS_ID": null, "FCLASS_IL": null, "FCLASS_IN": null, "FCLASS_ISO": null, "FCLASS_IT": null, "FCLASS_JP": null, "FCLASS_KO": null, "FCLASS_MA": null, "FCLASS_NL": null, "FCLASS_NP": null, "FCLASS_PK": null, "FCLASS_PL": null, "FCLASS_PS": null, "FCLASS_PT": null, "FCLASS_RU": null, "FCLASS_SA": null, "FCLASS_SE": null, "FCLASS_TLC": null, "FCLASS_TR": null, "FCLASS_TW": null, "FCLASS_UA": null, "FCLASS_US": null, "FCLASS_VN": null, "abbrev": "N.J.", "adm0_a3": "USA", "adm0_label": 2, "adm0_sr": 5, "adm1_code": "USA-3558", "admin": "United States of America", "area_sqkm": 0, "check_me": 20, "code_hasc": "US.NJ", "code_local": "US34", "datarank": 1, "diss_me": 3558, "featurecla": "Admin-1 scale rank", "fips": "US34", "fips_alt": null, "gadm_level": 1, "geonunit": "United States of America", "gn_a1_code": "US.NJ", "gn_id": 5101760, "gn_level": 1, "gn_name": "New Jersey", "gn_region": null, "gns_adm1": null, "gns_id": -1, "gns_lang": null, "gns_level": -1, "gns_name": null, "gns_region": null, "gu_a3": "USA", "hasc_maybe": null, "iso_3166_2": "US-NJ", "iso_a2": "US", "labelrank": 0, "latitude": 40.0449, "longitude": -74.4653, "mapcolor13": 1, "mapcolor9": 1, "max_label": 7.5, "min_label": 3.5, "min_zoom": 2, "name": "New Jersey", "name_alt": "NJ|N.J.", "name_ar": "\u0646\u064a\u0648\u062c\u064a\u0631\u0633\u064a", "name_bn": "\u09a8\u09bf\u0989 \u099c\u09be\u09b0\u09cd\u09b8\u09bf", "name_de": "New Jersey", "name_el": "\u039d\u03b9\u03bf\u03c5 \u03a4\u03b6\u03ad\u03c1\u03c3\u03b5\u03ca", "name_en": "New Jersey", "name_es": "Nueva Jersey", "name_fa": "\u0646\u06cc\u0648\u062c\u0631\u0633\u06cc", "name_fr": "New Jersey", "name_he": "\u05e0\u05d9\u05d5 \u05d2\u0027\u05e8\u05d6\u05d9", "name_hi": "\u0928\u094d\u092f\u0942 \u091c\u0930\u094d\u0938\u0940", "name_hu": "New Jersey", "name_id": "New Jersey", "name_it": "New Jersey", "name_ja": "\u30cb\u30e5\u30fc\u30b8\u30e3\u30fc\u30b8\u30fc\u5dde", "name_ko": "\ub274\uc800\uc9c0", "name_len": 10, "name_local": null, "name_nl": "New Jersey", "name_pl": "New Jersey", "name_pt": "Nova J\u00e9rsia", "name_ru": "\u041d\u044c\u044e-\u0414\u0436\u0435\u0440\u0441\u0438", "name_sv": "New Jersey", "name_tr": "New Jersey", "name_uk": "\u041d\u044c\u044e-\u0414\u0436\u0435\u0440\u0441\u0456", "name_ur": "\u0646\u06cc\u0648 \u062c\u0631\u0633\u06cc", "name_vi": "New Jersey", "name_zh": "\u65b0\u6cfd\u897f\u5dde", "name_zht": "\u7d10\u6fa4\u897f\u5dde", "ne_id": 1159315267, "note": null, "postal": "NJ", "provnum_ne": 0, "region": "Northeast", "region_cod": null, "region_sub": "Middle Atlantic", "sameascity": -99, "scalerank": 2, "sov_a3": "US1", "sub_code": null, "type": "State", "type_en": "State", "wikidataid": "Q1408", "wikipedia": "http://en.wikipedia.org/wiki/New_Jersey", "woe_id": 2347589, "woe_label": "New Jersey, US, United States", "woe_name": "New Jersey"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            var circle_marker_6023b411509331a63516bc8e96d0d498 = L.circleMarker(
+                [40.2932319, -74.1671114],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_4f347dc59c7c8a8e433a52f50772e39b);
+        
+    
+            circle_marker_6023b411509331a63516bc8e96d0d498.bindTooltip(
+                `<div>
+                     Monmouth
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a7420e9e1a7ed813b0ba9a01b549aabc = L.circleMarker(
+                [40.3367769, -74.0470837],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_4f347dc59c7c8a8e433a52f50772e39b);
+        
+    
+            circle_marker_a7420e9e1a7ed813b0ba9a01b549aabc.bindTooltip(
+                `<div>
+                     Little Silver
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8f46be7dd8d453f713bd5feb6d1910b2 = L.circleMarker(
+                [45.2710195, -93.2827625],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_4f347dc59c7c8a8e433a52f50772e39b);
+        
+    
+            circle_marker_8f46be7dd8d453f713bd5feb6d1910b2.bindTooltip(
+                `<div>
+                     Anoka
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_20a2cc66eb6337a41422782078a902c4 = L.circleMarker(
+                [45.0165728, -93.0949501],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_4f347dc59c7c8a8e433a52f50772e39b);
+        
+    
+            circle_marker_20a2cc66eb6337a41422782078a902c4.bindTooltip(
+                `<div>
+                     Ramsey
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
